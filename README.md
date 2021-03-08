@@ -22,6 +22,7 @@ If you have any questions, please contact me directly at tjwri25@gmail.com
 Visit my Github [here](https://github.com/tjwri25)
 
 ## Demo
-
+https://user-images.githubusercontent.com/74884495/110268565-1da72700-7f7f-11eb-8ec2-8f32ce272238.mp4
 
 ## Sample Readme
+![screenshot](https://user-images.githubusercontent.com/74884495/110268796-87bfcc00-7f7f-11eb-8988-5abf8eda48df.png)
