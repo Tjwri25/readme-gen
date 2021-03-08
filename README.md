@@ -4,31 +4,18 @@ This is a Readme Generator that can be used to create a Readme file through node
 ## Table of Contents
  * [Installation](#Installation)
 
- * [Usage](#Usage)
-
  * [License](#License)
-
- * [Contributing](#Contributing)
-
- * [Tests](#Tests)
-
+ 
  * [Questions](#Questions)
 
 ## Installation 
 to install necessary dependencies, run the following command:
-inquirer
+npm i inquirer --save
 
-## Usage 
-resolve merge conflicts
 
 ## License 
 [![License: MIT](https://img.shields.io/badge/License-MIT-important.svg)](https://opensource.org/licenses/MIT)
 
-## Contributing 
-be mindful of other's work
-
-## Tests 
-test
 
 ## Questions
 If you have any questions, please contact me directly at tjwri25@gmail.com 
