@@ -1,12 +1,26 @@
-
-// TODO: Include packages needed for this application
-const inquirer = require('inquirer');
 const fs = require('fs');
-// TODO: Create an array of questions for user input
+const inquirer = require('inquirer');
 
-
-
-const questions = () =>
+function renderLicenseBadge(license) {
+      switch(license) {
+      case "MIT":
+        return `[![License: MIT](https://img.shields.io/badge/License-MIT-important.svg)](https://opensource.org/licenses/MIT)`
+        break;
+      case "Apache 2.0":
+        return `[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)`
+        break;
+      case "Boost":
+        return `[![License](https://img.shields.io/badge/License-Boost%201.0-blueviolet.svg)](https://www.boost.org/LICENSE_1_0.txt)`
+        break;
+      case "BSD 3":
+        return `[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`
+        break;
+      default:
+        return "";
+    }
+    
+    }
+    const questions = () =>
 
     inquirer.prompt([
 
@@ -35,7 +49,7 @@ const questions = () =>
             type: 'list',
             name: 'license',
             message: 'What kind of license should your project have?',
-            choices: ["MIT", new inquirer.Separator(), "Apache 2.0", new inquirer.Separator(), "GPL 3.0", new inquirer.Separator(), "BSD 3", new inquirer.Separator(), "None"]
+            choices: ["MIT", new inquirer.Separator(), "Apache 2.0", new inquirer.Separator(), "Boost", new inquirer.Separator(), "BSD 3", new inquirer.Separator(), "None"]
         },
         {
             type: 'input',
@@ -58,42 +72,46 @@ const questions = () =>
             message: 'What does the user need to know about contributing to the repo?',
         },
     ]);
+  
 
-const generateReadme = (answers) =>
-`# ${answers.projectName} 
-    
+const generateReadme = (answers) => {
+
+return `# ${answers.projectName} 
 ## Description 
 ${answers.description}
-
 ## Table of Contents
-[Installation](#Installation)
-[Usage](#Usage)
-[License](#License)
-[Contributing](#Contributing)
-[Tests](#Tests)
-[Questions](#Questions)
-    
+ * [Installation](#Installation)
+
+ * [Usage](#Usage)
+
+ * [License](#License)
+
+ * [Contributing](#Contributing)
+
+ * [Tests](#Tests)
+
+ * [Questions](#Questions)
+
 ## Installation 
 to install necessary dependencies, run the following command:
 ${answers.installation}
-    
+
 ## Usage 
 ${answers.usage}
-    
+
 ## License 
-${answers.license}
-    
+${renderLicenseBadge(answers.license)}
+
 ## Contributing 
 ${answers.contributing}
-    
+
 ## Tests 
 ${answers.tests}
-    
+
 ## Questions
 If you have any questions, please contact me directly at ${answers.email} 
 Visit my Github [here](https://github.com/${answers.username})`;
-
-// TODO: Create a function to write README file
+}
 const init = () => {
     questions().then((answers) => {
         try {
@@ -105,12 +123,5 @@ const init = () => {
             console.log(error);
         }
     });
-
-    // TODO: Create a function to initialize app
-    // function init() {}
- 
-    // Function call to initialize app
-
 }
 init();
-
