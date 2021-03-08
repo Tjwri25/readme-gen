@@ -8,6 +8,10 @@ This is a Readme Generator that can be used to create a Readme file through node
 
  * [Questions](#Questions)
 
+ * [Demo](#Demo)
+
+ * [Sample Readme](#Sample-Readme)
+
 ## Installation 
 to install necessary dependencies, run the following command:
 npm i inquirer --save
